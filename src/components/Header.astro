@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+import logo from '../assets/13.png'
+import bgImage from '../assets/28.png'
+import corner from '../assets/14.png'
+---
+
+<div
+  style={`background-image: url(${bgImage.src});`}
+  class="relative bg-cover bg-center overflow-hidden h-[500px]"
+>
+  <Image src={corner} alt="logo" class="absolute -left-40 -top-20" />
+  <Image src={logo} alt="logo" class="absolute left-[50%] -translate-x-[50%]" />
+  <Image src={corner} alt="logo" class="absolute -right-60 top-20" />
+</div>
+
+<style>
+  .header {
+    /* background-size: cover; */
+    /* position: relative;å */
+    /* height: 500px; */
+    /* background-position: 100%; */
+    /* overflow: hidden; */
+  }
+
+  /* .logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  } */
+</style>

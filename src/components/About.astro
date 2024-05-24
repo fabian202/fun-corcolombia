@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets'
+import about from '../assets/25.png'
+import project from '../assets/26.png'
+import school from '../assets/27.png'
+import corner from '../assets/14.png'
+import padrino1 from '../assets/1.png'
+import padrino2 from '../assets/2.png'
+import padrino3 from '../assets/3.png'
+import album4 from '../assets/4.png'
+import album5 from '../assets/5.png'
+import album6 from '../assets/6.png'
+import album7 from '../assets/7.png'
+import album8 from '../assets/8.png'
+import album9 from '../assets/9.png'
+import album10 from '../assets/10.png'
+import album11 from '../assets/11.png'
+
+const proyectos = [
+  {
+    id: 'padrino',
+    name: 'Plan padrino',
+    picture: padrino1,
+    description:
+      '<p><b>Objetivo</b></p><br><p>Apoyar y apadrinar a los niños y familias, contribuyendo para que vivan con ropa en buenas condiciones, con una alimentación sana y una educación de calidad.</p><br><br><p><b>¿Que contiene el beneficio?</b></p><br><p>Uniformes, libros y útiles escolares para los niños, además de alimentos comunitarios, ropa y productos de aseo para las familias.</p>',
+  },
+  {
+    id: 'bienestar',
+    name: 'Bienestar',
+    picture: padrino2,
+    description:
+      '<p><b>Objetivo</b></p><br><p>Brindarle a los niños y familias, integración, aprendizaje, diversión y entretenimiento de una manera didáctica, por medio de salidas pedagógicas y de recreación.</p><p><br><br><b>Entidades</b></p><br><p>Zoológico Santa Fe</p><p>Museo de Antioquia</p><p>Jardín Botánico</p><p>Comfama</p><p>Comfenalco</p><p>Parque Explora</p><p>Planetario</p>',
+  },
+  {
+    id: 'bonos',
+    name: 'Bonos sonrisas',
+    picture: padrino3,
+    description:
+      '<p><b>Detalles llenos de significado</b></p><br><p>Por medio de esta donación vas a adquirir un detalle especial con doble intención, donde podrás regalarle un obsequio a alguien especial y a su vez llegar a más familias, niños y adultos en estado de vulnerabilidad, regalándole una sonrisa a sus vida.</p>',
+  },
+]
+
+const album = [album4, album5, album6, album7, album8, album9, album10, album11]
+---
+
+<div class="flex bg-white">
+  <a href="#quienes" class="w-1/2 p-4 flex justify-center items-center">
+    <Image src={project} alt="logo" class="cursor-pointer" />
+  </a>
+  <a href="#proyectos" class="w-1/2 p-4 flex justify-center items-center">
+    <Image src={about} alt="logo" class="cursor-pointer" />
+  </a>
+</div>
+
+<div class="flex flex-col bg-white relative overflow-hidden min-h-[500px]">
+  <Image src={corner} alt="logo" class="absolute -left-40 -top-20" />
+
+  <!-- First Row -->
+  <div class="flex pt-[10rem] pl-[10rem]" id="quienes">
+    <div class="text-5xl text-[#2867A7]">Quiénes somos</div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="flex">
+    <div class="w-1/2 p-[10rem] text-2xl text-gray-500">
+      <p>
+        Somos una entidad sin ánimo de lucro, cuyo propósito es ayudar a
+        poblaciones vulnerables
+      </p>
+      <p>Niños</p>
+      <p>Jóvenes</p>
+      <p>Ancianos</p>
+      <p>Familias desplazadas</p>
+    </div>
+    <div class="w-1/2 p-4 items-start">
+      <Image src={school} alt="logo" />
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col bg-[#BEE0F7]" id="proyectos">
+  <div class="flex justify-center items-center" id="quienes">
+    <div class="text-5xl text-[#2867A7] p-6 font-bold">Nuestros proyectos</div>
+  </div>
+
+  <div class="flex">
+    {
+      proyectos.map(({ name, picture, id }) => (
+        <a href={`#${id}`} class="w-1/3 p-4 hover:shadow-lg cursor-pointer">
+          <div class="max-w-md mx-auto overflow-hidden bg-white rounded-[1.7rem]">
+            <div>
+              <Image src={picture} alt="padrino2" />
+            </div>
+            <div class="p-6 bg-white text-center">
+              <p class="text-3xl text-[#2867A7] font-bold">{name}</p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+  {
+    proyectos.map(({ name, picture, description, id }) => (
+      <div class="p-10 shadow-lg" id={id}>
+        <div class="flex items-center justify-center py-6">
+          <p class="text-center text-5xl text-[#2867A7] p-6 font-bold">
+            {name}
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div class="flex items-center justify-center">
+            <Image src={picture} alt="padrino2" />
+          </div>
+          <div
+            class="text-center text-[#2867A7] text-xl px-32"
+            set:html={description}
+          />
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {
+    album.map((picture) => (
+      <div class="flex items-center justify-center p-4">
+        <Image src={picture} alt="padrino2" />
+      </div>
+    ))
+  }
+</div>
