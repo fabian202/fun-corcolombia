@@ -15,6 +15,7 @@ import album8 from '../assets/8.png'
 import album9 from '../assets/9.png'
 import album10 from '../assets/10.png'
 import album11 from '../assets/11.png'
+import Fotos from './Fotos'
 
 const proyectos = [
   {
@@ -41,6 +42,13 @@ const proyectos = [
 ]
 
 const album = [album4, album5, album6, album7, album8, album9, album10, album11]
+
+
+
+let isModalOpen = false
+const toggleModal = () => {
+  isModalOpen = !isModalOpen
+}
 ---
 
 <div class="flex bg-white">
@@ -121,12 +129,5 @@ const album = [album4, album5, album6, album7, album8, album9, album10, album11]
   }
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  {
-    album.map((picture) => (
-      <div class="flex items-center justify-center p-4">
-        <Image src={picture} alt="padrino2" />
-      </div>
-    ))
-  }
-</div>
+
+<Fotos client:load />
