@@ -1,78 +1,78 @@
 import React, { useState, useEffect } from "react";
 
 //album is the folder inside ../assets/fotos
-import foto1 from "../assets/FOTOS/ABRIL 27 2024- BARRIO ALFONSO LOPEZ/1.jpeg";
-import foto2 from "../assets/FOTOS/ABRIL 27 2024- BARRIO ALFONSO LOPEZ/2.jpeg";
-import foto3 from "../assets/FOTOS/ABRIL 27 2024- BARRIO ALFONSO LOPEZ/3.jpeg";
-import foto4 from "../assets/FOTOS/ABRIL 27 2024- BARRIO ALFONSO LOPEZ/4.jpeg";
-import foto5 from "../assets/FOTOS/ABRIL 27 2024- BARRIO ALFONSO LOPEZ/5.jpeg";
-import foto6 from "../assets/FOTOS/ABRIL 27 2024- BARRIO ALFONSO LOPEZ/6.jpeg";
+import foto1 from "../assets/fotos/1-alfonso-lopez/1.jpeg";
+import foto2 from "../assets/fotos/1-alfonso-lopez/2.jpeg";
+import foto3 from "../assets/fotos/1-alfonso-lopez/3.jpeg";
+import foto4 from "../assets/fotos/1-alfonso-lopez/4.jpeg";
+import foto5 from "../assets/fotos/1-alfonso-lopez/5.jpeg";
+import foto6 from "../assets/fotos/1-alfonso-lopez/6.jpeg";
 
-import foto7 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/1.jpeg";
-import foto8 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/2.jpeg";
-import foto9 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/3.jpeg";
-import foto10 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/4.jpeg";
-import foto11 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/5.jpeg";
-import foto12 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/6.jpeg";
-import foto13 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/7.jpeg";
-import foto14 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/8.jpeg";
-import foto15 from "../assets/FOTOS/ALIMENTOS COMUNITARIOS EN LA COMUNA 2/9.jpeg";
+import foto7 from "../assets/fotos/2-comuna-2/1.jpeg";
+import foto8 from "../assets/fotos/2-comuna-2/2.jpeg";
+import foto9 from "../assets/fotos/2-comuna-2/3.jpeg";
+import foto10 from "../assets/fotos/2-comuna-2/4.jpeg";
+import foto11 from "../assets/fotos/2-comuna-2/5.jpeg";
+import foto12 from "../assets/fotos/2-comuna-2/6.jpeg";
+import foto13 from "../assets/fotos/2-comuna-2/7.jpeg";
+import foto14 from "../assets/fotos/2-comuna-2/8.jpeg";
+import foto15 from "../assets/fotos/2-comuna-2/9.jpeg";
 
-import foto16 from "../assets/FOTOS/JUNIO 4 2024 - INSTITUCION EDUCATIVA RAFAEL J MEJIA/1.jpeg";
-import foto17 from "../assets/FOTOS/JUNIO 4 2024 - INSTITUCION EDUCATIVA RAFAEL J MEJIA/2.jpeg";
-import foto18 from "../assets/FOTOS/JUNIO 4 2024 - INSTITUCION EDUCATIVA RAFAEL J MEJIA/3.jpeg";
-import foto19 from "../assets/FOTOS/JUNIO 4 2024 - INSTITUCION EDUCATIVA RAFAEL J MEJIA/4.jpeg";
+import foto16 from "../assets/fotos/3-rafael-j-mejia/1.jpeg";
+import foto17 from "../assets/fotos/3-rafael-j-mejia/2.jpeg";
+import foto18 from "../assets/fotos/3-rafael-j-mejia/3.jpeg";
+import foto19 from "../assets/fotos/3-rafael-j-mejia/4.jpeg";
 
-import foto20 from "../assets/FOTOS/JUNIO 2024-MACARENA META/1.jpeg";
-import foto21 from "../assets/FOTOS/JUNIO 2024-MACARENA META/2.jpeg";
-import foto22 from "../assets/FOTOS/JUNIO 2024-MACARENA META/3.jpeg";
-import foto23 from "../assets/FOTOS/JUNIO 2024-MACARENA META/4.jpeg";
+import foto20 from "../assets/fotos/4-macarena-meta/1.jpeg";
+import foto21 from "../assets/fotos/4-macarena-meta/2.jpeg";
+import foto22 from "../assets/fotos/4-macarena-meta/3.jpeg";
+import foto23 from "../assets/fotos/4-macarena-meta/4.jpeg";
 
-import foto24 from "../assets/FOTOS/MARZO 2024-INSTITUCION EDUCATIVA RAFAEL J MEJIA/1.jpeg";
-import foto25 from "../assets/FOTOS/MARZO 2024-INSTITUCION EDUCATIVA RAFAEL J MEJIA/2.jpeg";
-import foto26 from "../assets/FOTOS/MARZO 2024-INSTITUCION EDUCATIVA RAFAEL J MEJIA/3.jpeg";
-import foto27 from "../assets/FOTOS/MARZO 2024-INSTITUCION EDUCATIVA RAFAEL J MEJIA/4.jpeg";
-import foto28 from "../assets/FOTOS/MARZO 2024-INSTITUCION EDUCATIVA RAFAEL J MEJIA/5.jpeg";
-import foto29 from "../assets/FOTOS/MARZO 2024-INSTITUCION EDUCATIVA RAFAEL J MEJIA/6.jpeg";
-import foto30 from "../assets/FOTOS/MARZO 2024-INSTITUCION EDUCATIVA RAFAEL J MEJIA/7.jpeg";
+import foto24 from "../assets/fotos/5-rafael-j-mejia/1.jpeg";
+import foto25 from "../assets/fotos/5-rafael-j-mejia/2.jpeg";
+import foto26 from "../assets/fotos/5-rafael-j-mejia/3.jpeg";
+import foto27 from "../assets/fotos/5-rafael-j-mejia/4.jpeg";
+import foto28 from "../assets/fotos/5-rafael-j-mejia/5.jpeg";
+import foto29 from "../assets/fotos/5-rafael-j-mejia/6.jpeg";
+import foto30 from "../assets/fotos/5-rafael-j-mejia/7.jpeg";
 
-import foto31 from "../assets/FOTOS/NOVIEMBRE 2023-HOGAR SAN JOSE DE LA MONTANA/1.jpeg";
-import foto32 from "../assets/FOTOS/NOVIEMBRE 2023-HOGAR SAN JOSE DE LA MONTANA/2.jpeg";
-import foto33 from "../assets/FOTOS/NOVIEMBRE 2023-HOGAR SAN JOSE DE LA MONTANA/3.jpeg";
+import foto31 from "../assets/fotos/6-san-jose/1.jpeg";
+import foto32 from "../assets/fotos/6-san-jose/2.jpeg";
+import foto33 from "../assets/fotos/6-san-jose/3.jpeg";
 
-import foto34 from "../assets/FOTOS/OCTUBRE 5 2023-ROBLEDO LAS MARGARITAS/1.jpeg";
-import foto35 from "../assets/FOTOS/OCTUBRE 5 2023-ROBLEDO LAS MARGARITAS/2.jpeg";
-import foto36 from "../assets/FOTOS/OCTUBRE 5 2023-ROBLEDO LAS MARGARITAS/3.jpeg";
-import foto37 from "../assets/FOTOS/OCTUBRE 5 2023-ROBLEDO LAS MARGARITAS/4.jpeg";
-import foto38 from "../assets/FOTOS/OCTUBRE 5 2023-ROBLEDO LAS MARGARITAS/5.jpeg";
-import foto39 from "../assets/FOTOS/OCTUBRE 5 2023-ROBLEDO LAS MARGARITAS/6.jpeg";
+import foto34 from "../assets/fotos/7-robledo-margaritas/1.jpeg";
+import foto35 from "../assets/fotos/7-robledo-margaritas/2.jpeg";
+import foto36 from "../assets/fotos/7-robledo-margaritas/3.jpeg";
+import foto37 from "../assets/fotos/7-robledo-margaritas/4.jpeg";
+import foto38 from "../assets/fotos/7-robledo-margaritas/5.jpeg";
+import foto39 from "../assets/fotos/7-robledo-margaritas/6.jpeg";
 
-import foto40 from "../assets/FOTOS/OCTUBRE 27 2023 - NIQUITAO COMUNA 10/1.jpeg";
-import foto41 from "../assets/FOTOS/OCTUBRE 27 2023 - NIQUITAO COMUNA 10/2.jpeg";
-import foto42 from "../assets/FOTOS/OCTUBRE 27 2023 - NIQUITAO COMUNA 10/3.jpeg";
-import foto43 from "../assets/FOTOS/OCTUBRE 27 2023 - NIQUITAO COMUNA 10/4.jpeg";
-import foto44 from "../assets/FOTOS/OCTUBRE 27 2023 - NIQUITAO COMUNA 10/5.jpeg";
-import foto45 from "../assets/FOTOS/OCTUBRE 27 2023 - NIQUITAO COMUNA 10/6.jpeg";
-import foto46 from "../assets/FOTOS/OCTUBRE 27 2023 - NIQUITAO COMUNA 10/7.jpeg";
+import foto40 from "../assets/fotos/8-niquitao/1.jpeg";
+import foto41 from "../assets/fotos/8-niquitao/2.jpeg";
+import foto42 from "../assets/fotos/8-niquitao/3.jpeg";
+import foto43 from "../assets/fotos/8-niquitao/4.jpeg";
+import foto44 from "../assets/fotos/8-niquitao/5.jpeg";
+import foto45 from "../assets/fotos/8-niquitao/6.jpeg";
+import foto46 from "../assets/fotos/8-niquitao/7.jpeg";
 
-import foto47 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/1.jpeg";
-import foto48 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/2.jpeg";
-import foto49 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/3.jpeg";
-import foto50 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/4.jpeg";
-import foto51 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/5.jpeg";
-import foto52 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/6.jpeg";
-import foto53 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/7.jpeg";
-import foto54 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/8.jpeg";
-import foto55 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/9.jpeg";
-import foto56 from "../assets/FOTOS/SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO/10.jpeg";
+import foto47 from "../assets/fotos/9-barrio-paraiso/1.jpeg";
+import foto48 from "../assets/fotos/9-barrio-paraiso/2.jpeg";
+import foto49 from "../assets/fotos/9-barrio-paraiso/3.jpeg";
+import foto50 from "../assets/fotos/9-barrio-paraiso/4.jpeg";
+import foto51 from "../assets/fotos/9-barrio-paraiso/5.jpeg";
+import foto52 from "../assets/fotos/9-barrio-paraiso/6.jpeg";
+import foto53 from "../assets/fotos/9-barrio-paraiso/7.jpeg";
+import foto54 from "../assets/fotos/9-barrio-paraiso/8.jpeg";
+import foto55 from "../assets/fotos/9-barrio-paraiso/9.jpeg";
+import foto56 from "../assets/fotos/9-barrio-paraiso/10.jpeg";
 
-import foto57 from "../assets/FOTOS/SEPTIEMBRE 26 2023-COMUNA 7 ROBLEDO EL DIAMANTE/1.jpeg";
-import foto58 from "../assets/FOTOS/SEPTIEMBRE 26 2023-COMUNA 7 ROBLEDO EL DIAMANTE/2.jpeg";
-import foto59 from "../assets/FOTOS/SEPTIEMBRE 26 2023-COMUNA 7 ROBLEDO EL DIAMANTE/3.jpeg";
-import foto60 from "../assets/FOTOS/SEPTIEMBRE 26 2023-COMUNA 7 ROBLEDO EL DIAMANTE/4.jpeg";
-import foto61 from "../assets/FOTOS/SEPTIEMBRE 26 2023-COMUNA 7 ROBLEDO EL DIAMANTE/5.jpeg";
-import foto62 from "../assets/FOTOS/SEPTIEMBRE 26 2023-COMUNA 7 ROBLEDO EL DIAMANTE/6.jpeg";
-import foto63 from "../assets/FOTOS/SEPTIEMBRE 26 2023-COMUNA 7 ROBLEDO EL DIAMANTE/7.jpeg";
+import foto57 from "../assets/fotos/10-robledo-diamante/1.jpeg";
+import foto58 from "../assets/fotos/10-robledo-diamante/2.jpeg";
+import foto59 from "../assets/fotos/10-robledo-diamante/3.jpeg";
+import foto60 from "../assets/fotos/10-robledo-diamante/4.jpeg";
+import foto61 from "../assets/fotos/10-robledo-diamante/5.jpeg";
+import foto62 from "../assets/fotos/10-robledo-diamante/6.jpeg";
+import foto63 from "../assets/fotos/10-robledo-diamante/7.jpeg";
 
 const fotos = [
   { album: 'ABRIL 27 2024- BARRIO ALFONSO LOPEZ', total: 6, pics: [foto1, foto2, foto3, foto4, foto5, foto6] },
