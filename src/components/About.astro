@@ -7,15 +7,6 @@ import corner from '../assets/14.png'
 import padrino1 from '../assets/1.png'
 import padrino2 from '../assets/2.png'
 import padrino3 from '../assets/3.png'
-import album4 from '../assets/4.png'
-import album5 from '../assets/5.png'
-import album6 from '../assets/6.png'
-import album7 from '../assets/7.png'
-import album8 from '../assets/8.png'
-import album9 from '../assets/9.png'
-import album10 from '../assets/10.png'
-import album11 from '../assets/11.png'
-import Fotos from './Fotos'
 
 const proyectos = [
   {
@@ -40,15 +31,6 @@ const proyectos = [
       '<p><b>Detalles llenos de significado</b></p><br><p>Por medio de esta donación vas a adquirir un detalle especial con doble intención, donde podrás regalarle un obsequio a alguien especial y a su vez llegar a más familias, niños y adultos en estado de vulnerabilidad, regalándole una sonrisa a sus vida.</p>',
   },
 ]
-
-const album = [album4, album5, album6, album7, album8, album9, album10, album11]
-
-
-
-let isModalOpen = false
-const toggleModal = () => {
-  isModalOpen = !isModalOpen
-}
 ---
 
 <div class="flex bg-white">
@@ -128,6 +110,3 @@ const toggleModal = () => {
     ))
   }
 </div>
-
-
-<Fotos client:load />
