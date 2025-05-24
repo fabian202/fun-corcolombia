@@ -156,12 +156,12 @@ export default function Fotos() {
       </p>
       {/* Instagram embed example */}
       <div className="flex justify-center my-8">
-        <div className="w-full md:w-4/5">
+        <div className="w-full md:w-4/5 px-2 md:px-0">
           <iframe
             src="https://www.instagram.com/CORTEJIENDOSUENOS/embed"
             width="100%"
             // Responsive height: 480px on mobile, 960px on md+
-            className="rounded-lg shadow-md w-full h-[480px] md:h-[960px]"
+            className="rounded-lg shadow-md w-full h-[480px] md:h-[960px] "
             frameBorder="0"
             scrolling="no"
             allowtransparency="true"
