@@ -154,6 +154,21 @@ export default function Fotos() {
       <p className="text-center text-5xl text-[#2867A7] p-6 font-bold">
         Galería de fotos
       </p>
+      {/* Instagram embed example */}
+      <div className="flex justify-center my-8">
+        <div className="w-full md:w-4/5">
+          <iframe
+            src="https://www.instagram.com/CORTEJIENDOSUENOS/embed"
+            width="100%"
+            // Responsive height: 480px on mobile, 960px on md+
+            className="rounded-lg shadow-md w-full h-[480px] md:h-[960px]"
+            frameBorder="0"
+            scrolling="no"
+            allowtransparency="true"
+            title="Instagram Profile"
+          ></iframe>
+        </div>
+      </div>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {fotos.map((album, index) => (
           <div key={index} className="album-card text-center">
