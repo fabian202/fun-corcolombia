@@ -9,11 +9,10 @@ interface Props {
 
 const { variant = 'dark', compact = false } = Astro.props
 const textClass = variant === 'light' ? 'text-white' : 'text-brand-navy'
-const markClass = compact ? 'h-10 w-10' : 'h-11 w-11 md:h-12 md:w-12'
+const markBoxClass = 'h-14 w-14'
 ---
 
-<a href="#inicio" class={`group inline-flex items-center gap-3 ${textClass}`} aria-label="Cortejiendo Sueños, ir al inicio">
-	<Image src={logoMark} alt="" class={`${markClass} shrink-0 object-contain`} aria-hidden="true" />
+<a href="#inicio" class={`group inline-flex items-center gap-2 ${textClass}`} aria-label="Cortejiendo Sueños, ir al inicio">
 	<span class="leading-none">
 		<span class={`block font-display italic tracking-tight ${compact ? 'text-lg' : 'text-xl md:text-2xl'}`}>
 			Cortejiendo
@@ -21,5 +20,13 @@ const markClass = compact ? 'h-10 w-10' : 'h-11 w-11 md:h-12 md:w-12'
 		<span class={`block font-display font-medium ${compact ? 'text-base' : 'text-lg md:text-xl'} -mt-0.5`}>
 			Sueños
 		</span>
+	</span>
+	<span class={`inline-flex shrink-0 items-center justify-center overflow-visible ${markBoxClass}`}>
+		<Image
+			src={logoMark}
+			alt=""
+			class="h-full w-full scale-[2] object-contain"
+			aria-hidden="true"
+		/>
 	</span>
 </a>
