@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: fabian202/fun-corcolombia
-  branch: cursor/web-rebrand-20dd
+  branch: main
 
 # En local lee los archivos de tu disco (no los de GitHub):
 local_backend: true
