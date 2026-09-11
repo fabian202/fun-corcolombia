@@ -16,6 +16,11 @@ html {
 	scroll-padding-top: 5.5rem;
 }
 
+section[id],
+article[id] {
+	scroll-margin-top: 5.5rem;
+}
+
 body {
 	font-family: Figtree, system-ui, sans-serif;
 	color: #1c2836;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import foto1 from '../assets/fotos/1-alfonso-lopez/1.jpeg'
 import foto2 from '../assets/fotos/1-alfonso-lopez/2.jpeg'
@@ -160,14 +160,27 @@ export default function Fotos() {
         </p>
       </div>
 
-      <div className="mt-12 overflow-hidden rounded-4xl bg-white p-3 shadow-card md:p-4">
-        <iframe
-          src="https://www.instagram.com/CORTEJIENDOSUENOS/embed"
-          className="h-[480px] w-full rounded-3xl md:h-[720px]"
-          allow="encrypted-media"
-          title="Perfil de Instagram de Cortejiendo Sueños"
-        ></iframe>
-      </div>
+      <a
+        href="https://www.instagram.com/CORTEJIENDOSUENOS/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative mt-12 flex min-h-[220px] overflow-hidden rounded-4xl shadow-card"
+      >
+        <img
+          src={foto17.src}
+          alt="Jornada de Cortejiendo Sueños en un aula"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-brand-navy/70"></div>
+        <div className="relative z-10 flex w-full flex-col items-start justify-end p-8 text-white md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Instagram</p>
+          <p className="mt-2 font-display text-3xl md:text-4xl">@cortejiendosuenos</p>
+          <p className="mt-2 max-w-lg text-sm text-white/80">
+            Mira las entregas más recientes y comparte una sonrisa.
+          </p>
+          <span className="btn-primary mt-6">Seguir en Instagram</span>
+        </div>
+      </a>
 
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {fotos.map((album) => (

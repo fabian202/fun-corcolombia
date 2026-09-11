@@ -76,7 +76,7 @@ const proyectos = [
 							<Image
 								src={picture}
 								alt={name}
-								class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+								class="h-full w-full max-w-none object-cover transition duration-500 group-hover:scale-105"
 							/>
 						</div>
 						<div class="p-6">
@@ -98,7 +98,7 @@ const proyectos = [
 						class="grid overflow-hidden rounded-4xl bg-white shadow-soft md:grid-cols-2"
 					>
 						<div class="min-h-[280px]">
-							<Image src={picture} alt={name} class="h-full w-full object-cover" />
+							<Image src={picture} alt={name} class="h-full w-full max-w-none object-cover" />
 						</div>
 						<div class="flex flex-col justify-center p-8 md:p-12">
 							<h3 class="font-display text-4xl text-brand-navy">{name}</h3>
