@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-	--brand-navy: #163a5f;
-	--brand-blue: #2b7bc1;
-	--brand-sky: #e8f3fb;
-	--brand-sand: #fbf6f0;
-	--brand-heart: #e23c4a;
-	--brand-gold: #e0b15a;
+	--brand-navy: #0f2744;
+	--brand-blue: #2f6fed;
+	--brand-sky: #f4f7fb;
+	--brand-sand: #faf8f5;
+	--brand-heart: #e24b57;
+	--brand-gold: #c9a46a;
 }
 
 html {
@@ -22,14 +22,14 @@ article[id] {
 }
 
 body {
-	font-family: Figtree, system-ui, sans-serif;
-	color: #1c2836;
+	font-family: Manrope, system-ui, sans-serif;
+	color: var(--brand-ink, #1b1c1a);
 	background: var(--brand-sand);
 }
 
 ::selection {
-	background: #f4c7cb;
-	color: #163a5f;
+	background: #fcd9dc;
+	color: var(--brand-navy);
 }
 
 :focus-visible {
@@ -37,27 +37,17 @@ body {
 	outline-offset: 3px;
 }
 
-.weave {
-	background-color: var(--brand-sand);
-	background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c20-12 20 12 40 0s20 12 40 0' fill='none' stroke='%23d7e8f4' stroke-width='1.2'/%3E%3Cpath d='M0 60c20-12 20 12 40 0s20 12 40 0' fill='none' stroke='%23f3d6d9' stroke-width='1'/%3E%3C/svg%3E");
-}
-
-.stitch {
-	border-style: dashed;
-	border-color: #e0b15a;
-}
-
 @layer components {
 	.btn-primary {
-		@apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-heart px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[#c92f3c];
+		@apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-heart px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[#c93d49];
 	}
 
 	.btn-secondary {
-		@apply inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20;
+		@apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20;
 	}
 
 	.section-kicker {
-		@apply mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-heart;
+		@apply mb-3 text-xs font-semibold tracking-[0.14em] text-brand-heart;
 	}
 }
 

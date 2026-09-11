@@ -58,50 +58,25 @@ const proyectos = [
 <section id="proyectos" class="bg-brand-sky">
 	<div class="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
 		<div class="mx-auto max-w-2xl text-center">
-			<p class="section-kicker">Nuestros proyectos</p>
-			<h2 class="font-display text-4xl font-medium text-brand-navy md:text-5xl">Tres formas de tejer una sonrisa</h2>
+			<p class="section-kicker">Nuestras líneas de acción</p>
+			<h2 class="font-display text-4xl font-medium tracking-tight text-brand-navy md:text-5xl">Tres formas de tejer una sonrisa</h2>
 			<p class="mt-4 text-lg text-brand-muted">
 				Cada programa está pensado para cubrir lo esencial y también lo que alegra el corazón.
 			</p>
 		</div>
 
-		<div class="mt-14 grid gap-6 md:grid-cols-3">
+		<div class="mt-14 space-y-8">
 			{
-				proyectos.map(({ name, picture, id, summary, kicker }) => (
-					<a
-						href={`#${id}`}
-						class="group overflow-hidden rounded-4xl bg-white shadow-card transition hover:-translate-y-1"
-					>
-						<div class="aspect-[4/3] overflow-hidden">
-							<Image
-								src={picture}
-								alt={name}
-								class="h-full w-full max-w-none object-cover transition duration-500 group-hover:scale-105"
-							/>
-						</div>
-						<div class="p-6">
-							<p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-heart">{kicker}</p>
-							<h3 class="mt-2 font-display text-3xl text-brand-navy">{name}</h3>
-							<p class="mt-3 text-sm leading-relaxed text-brand-muted">{summary}</p>
-							<p class="mt-5 text-sm font-semibold text-brand-blue">Conocer más →</p>
-						</div>
-					</a>
-				))
-			}
-		</div>
-
-		<div class="mt-16 space-y-8">
-			{
-				proyectos.map(({ name, picture, details, id, summary }) => (
+				proyectos.map(({ name, picture, details, id, summary }, index) => (
 					<article
 						id={id}
-						class="grid overflow-hidden rounded-4xl bg-white shadow-soft md:grid-cols-2"
+						class={`grid overflow-hidden rounded-4xl border border-brand-navy/5 bg-white shadow-soft md:grid-cols-2 ${index % 2 === 1 ? 'md:[&>div:first-child]:order-2' : ''}`}
 					>
 						<div class="min-h-[280px]">
 							<Image src={picture} alt={name} class="h-full w-full max-w-none object-cover" />
 						</div>
 						<div class="flex flex-col justify-center p-8 md:p-12">
-							<h3 class="font-display text-4xl text-brand-navy">{name}</h3>
+							<h3 class="font-display text-3xl text-brand-navy md:text-4xl">{name}</h3>
 							<p class="mt-3 text-brand-muted">{summary}</p>
 							<div class="mt-6 space-y-5">
 								{details.map(({ title, body }) => (

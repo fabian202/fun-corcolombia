@@ -21,53 +21,56 @@ const currentYear = new Date().getFullYear()
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+		<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content="#163A5F" />
+		<meta name="theme-color" content="#0F2744" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,600&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap"
 			rel="stylesheet"
 		/>
 		<title>{title}</title>
 	</head>
-	<body class="weave min-h-screen antialiased">
+	<body class="min-h-screen bg-brand-sand antialiased">
 		<Nav />
 		<slot />
-		<footer class="mt-4 bg-brand-navy text-white">
+		<footer class="bg-brand-navy text-white">
 			<div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-6">
 				<div>
 					<Logo variant="light" />
-					<p class="mt-5 max-w-sm text-sm leading-relaxed text-white/75">
+					<p class="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
 						Entidad sin ánimo de lucro. Tejemos oportunidades para poblaciones vulnerables en Colombia y más allá.
 					</p>
 				</div>
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Explorar</p>
-					<ul class="mt-4 space-y-2 text-sm text-white/80">
-						<li><a class="hover:text-white" href="#quienes">Quiénes somos</a></li>
-						<li><a class="hover:text-white" href="#proyectos">Proyectos</a></li>
-						<li><a class="hover:text-white" href="#galeria">Galería</a></li>
-						<li><a class="hover:text-white" href="#contacto">Contacto</a></li>
+					<p class="text-xs font-semibold tracking-[0.14em] text-brand-gold">Explorar</p>
+					<ul class="mt-4 space-y-2 text-sm text-white/75">
+						<li><a class="transition hover:text-white" href="#quienes">Quiénes somos</a></li>
+						<li><a class="transition hover:text-white" href="#proyectos">Proyectos</a></li>
+						<li><a class="transition hover:text-white" href="#galeria">Galería</a></li>
+						<li><a class="transition hover:text-white" href="#contacto">Contacto</a></li>
 					</ul>
 				</div>
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Conversemos</p>
-					<ul class="mt-4 space-y-2 text-sm text-white/80">
+					<p class="text-xs font-semibold tracking-[0.14em] text-brand-gold">Conversemos</p>
+					<ul class="mt-4 space-y-2 text-sm text-white/75">
 						<li>
-							<a class="hover:text-white" href="https://wa.me/573136504001" target="_blank" rel="noopener noreferrer">
+							<a class="transition hover:text-white" href="https://wa.me/573136504001" target="_blank" rel="noopener noreferrer">
 								WhatsApp +57 313 650 4001
 							</a>
 						</li>
 						<li>
-							<a class="hover:text-white" href="mailto:cortejiendosuenosinternacional@gmail.com">
+							<a class="transition hover:text-white" href="mailto:cortejiendosuenosinternacional@gmail.com">
 								cortejiendosuenosinternacional@gmail.com
 							</a>
 						</li>
 						<li>
 							<a
-								class="hover:text-white"
+								class="transition hover:text-white"
 								href="https://www.instagram.com/CORTEJIENDOSUENOS/"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -78,7 +81,7 @@ const currentYear = new Date().getFullYear()
 					</ul>
 				</div>
 			</div>
-			<div class="border-t border-white/10 py-5 text-center text-xs text-white/55">
+			<div class="border-t border-white/10 py-5 text-center text-xs text-white/50">
 				<p>Fundación Cortejiendo Sueños · © {currentYear} todos los derechos reservados</p>
 			</div>
 		</footer>

@@ -4,19 +4,16 @@ const channels = [
 		title: 'WhatsApp',
 		detail: '+57 313 650 4001',
 		href: 'https://wa.me/573136504001',
-		label: 'Escribir ahora',
 	},
 	{
 		title: 'Correo',
 		detail: 'cortejiendosuenosinternacional@gmail.com',
 		href: 'mailto:cortejiendosuenosinternacional@gmail.com',
-		label: 'Enviar mensaje',
 	},
 	{
 		title: 'Instagram',
 		detail: '@cortejiendosuenos',
 		href: 'https://www.instagram.com/CORTEJIENDOSUENOS/',
-		label: 'Seguir',
 	},
 ]
 ---
@@ -25,13 +22,26 @@ const channels = [
 	<div class="overflow-hidden rounded-4xl bg-brand-navy px-6 py-12 text-white md:px-14 md:py-16">
 		<div class="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
 			<div>
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Cómo ayudar</p>
-				<h2 class="mt-3 font-display text-4xl font-medium md:text-5xl">
+				<p class="text-xs font-semibold tracking-[0.14em] text-brand-gold">Cómo ayudar</p>
+				<h2 class="mt-3 font-display text-4xl font-medium tracking-tight md:text-5xl">
 					Tu donación puede cambiar vidas
 				</h2>
-				<p class="mt-5 max-w-xl text-lg leading-relaxed text-white/75">
+				<p class="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
 					Juntos podemos hacer la diferencia. Apadrina, adquiere un bono sonrisas o escribe para sumarte como voluntario.
 				</p>
+				<div class="mt-8 flex flex-wrap gap-3">
+					<a
+						href="https://wa.me/573136504001"
+						class="btn-primary"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Hablar por WhatsApp
+					</a>
+					<a href="mailto:cortejiendosuenosinternacional@gmail.com" class="btn-secondary">
+						Enviar correo
+					</a>
+				</div>
 			</div>
 			<div class="space-y-3">
 				{
@@ -40,13 +50,13 @@ const channels = [
 							href={item.href}
 							target={item.href.startsWith('http') ? '_blank' : undefined}
 							rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-							class="flex items-center justify-between gap-4 rounded-2xl bg-white/10 px-5 py-4 transition hover:bg-white/15"
+							class="flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4 transition hover:bg-white/10"
 						>
-							<span>
-								<span class="block text-xs uppercase tracking-[0.16em] text-brand-gold">{item.title}</span>
-								<span class="mt-1 block text-sm text-white/90">{item.detail}</span>
+							<span class="min-w-0">
+								<span class="block text-xs tracking-[0.12em] text-brand-gold">{item.title}</span>
+								<span class="mt-1 block break-all text-sm text-white/90">{item.detail}</span>
 							</span>
-							<span class="shrink-0 text-sm font-semibold text-white">{item.label} →</span>
+							<span class="shrink-0 text-lg text-white/80" aria-hidden="true">→</span>
 						</a>
 					))
 				}

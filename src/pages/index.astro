@@ -5,6 +5,9 @@ import About from '../components/About.astro'
 import Projects from '../components/Projects.astro'
 import Fotos from '../components/Fotos'
 import Contact from '../components/Contact.astro'
+import { getGalleryAlbums } from '../lib/gallery'
+
+const albums = getGalleryAlbums()
 ---
 
 <Layout title="Cortejiendo Sueños">
@@ -12,7 +15,7 @@ import Contact from '../components/Contact.astro'
 		<Header />
 		<About />
 		<Projects />
-		<Fotos client:load />
+		<Fotos albums={albums} client:load />
 		<Contact />
 	</main>
 </Layout>

@@ -7,10 +7,10 @@ const audiences = ['Niños', 'Jóvenes', 'Personas mayores', 'Familias desplazad
 ---
 
 <section id="quienes" class="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
-	<div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+	<div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
 		<div>
 			<p class="section-kicker">Quiénes somos</p>
-			<h2 class="font-display text-4xl font-medium text-brand-navy md:text-5xl">
+			<h2 class="font-display text-4xl font-medium tracking-tight text-brand-navy md:text-5xl">
 				Una fundación que teje oportunidades
 			</h2>
 			<p class="mt-6 text-lg leading-relaxed text-brand-muted">
@@ -22,7 +22,7 @@ const audiences = ['Niños', 'Jóvenes', 'Personas mayores', 'Familias desplazad
 			<ul class="mt-8 flex flex-wrap gap-2">
 				{
 					audiences.map((item) => (
-						<li class="rounded-full border border-brand-navy/10 bg-white px-4 py-2 text-sm font-medium text-brand-navy shadow-soft">
+						<li class="rounded-full border border-brand-navy/8 bg-white px-4 py-2 text-sm font-medium text-brand-navy">
 							{item}
 						</li>
 					))
@@ -30,8 +30,6 @@ const audiences = ['Niños', 'Jóvenes', 'Personas mayores', 'Familias desplazad
 			</ul>
 		</div>
 		<div class="relative">
-			<div class="absolute -left-4 -top-4 h-24 w-24 rounded-full bg-brand-heart/15 blur-2xl"></div>
-			<div class="absolute -bottom-6 -right-4 h-28 w-28 rounded-full bg-brand-blue/20 blur-2xl"></div>
 			<Image
 				src={aboutPhoto}
 				alt="Una niña recibe un kit de aseo de un voluntario en el aula"
@@ -40,6 +38,11 @@ const audiences = ['Niños', 'Jóvenes', 'Personas mayores', 'Familias desplazad
 			<div class="absolute -bottom-8 -left-4 z-20 hidden max-w-[220px] overflow-hidden rounded-3xl border-4 border-brand-sand shadow-card md:block">
 				<Image src={communityPhoto} alt="Niña sonríe con zapatos nuevos donados por la fundación" class="h-40 w-full object-cover" />
 			</div>
+			<blockquote class="absolute -right-2 top-8 z-20 hidden max-w-[240px] rounded-2xl border border-brand-navy/8 bg-white p-5 shadow-soft lg:block">
+				<p class="font-display text-lg italic leading-snug text-brand-navy">
+					«Cada puntada que damos en la comunidad fortalece la autoestima y abre caminos al saber»
+				</p>
+			</blockquote>
 		</div>
 	</div>
 </section>

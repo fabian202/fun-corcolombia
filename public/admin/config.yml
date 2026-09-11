@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: fabian202/fun-corcolombia
+  branch: cursor/web-rebrand-20dd
+
+# En local lee los archivos de tu disco (no los de GitHub):
+local_backend: true
+
+media_folder: public/gallery/uploads
+public_folder: /gallery/uploads
+
+locale: es
+
+site_url: https://cortejiendosuenos.org
+display_url: https://cortejiendosuenos.org
+
+collections:
+  - name: gallery
+    label: Galería
+    label_singular: Álbum
+    folder: src/content/gallery
+    create: true
+    slug: '{{slug}}'
+    extension: json
+    format: json
+    summary: '{{date}} · {{album}}'
+    sortable_fields: [order, date, album]
+    fields:
+      - label: Título del álbum
+        name: album
+        widget: string
+        hint: 'Ej: Barrio Alfonso López'
+      - label: Fecha o lugar
+        name: date
+        widget: string
+        hint: 'Ej: 27 abril 2024 · Medellín'
+      - label: Orden
+        name: order
+        widget: number
+        default: 0
+        value_type: int
+        hint: Menor número aparece primero en la galería
+      - label: Fotos
+        name: pics
+        widget: list
+        label_singular: Foto
+        summary: '{{fields.pic}}'
+        field:
+          label: Imagen
+          name: pic
+          widget: image
+          choose_url: false
