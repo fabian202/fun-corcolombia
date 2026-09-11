@@ -2,9 +2,13 @@ backend:
   name: github
   repo: fabian202/fun-corcolombia
   branch: main
+  base_url: https://cortejiendosuenos.org
+  auth_endpoint: api/auth
 
-# En local lee los archivos de tu disco (no los de GitHub):
-local_backend: true
+# Solo para editar en local:
+# 1. Descomenta local_backend
+# 2. Corre npm run cms
+# local_backend: true
 
 media_folder: public/gallery/uploads
 public_folder: /gallery/uploads
