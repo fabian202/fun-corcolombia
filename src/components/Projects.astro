@@ -1,0 +1,120 @@
+---
+import { Image } from 'astro:assets'
+import padrino from '../assets/1.png'
+import bienestar from '../assets/2.png'
+import bonos from '../assets/fotos/2-comuna-2/1.jpeg'
+
+const proyectos = [
+	{
+		id: 'padrino',
+		name: 'Plan padrino',
+		kicker: 'Apoyo cotidiano',
+		picture: padrino,
+		summary: 'Apadrina a un niño o a una familia con ropa, alimentación y educación de calidad.',
+		details: [
+			{
+				title: 'Objetivo',
+				body: 'Apoyar y apadrinar a los niños y las familias, para que vivan con ropa en buenas condiciones, una alimentación sana y una educación de calidad.',
+			},
+			{
+				title: 'Qué contiene el beneficio',
+				body: 'Uniformes, libros y útiles escolares para los niños, además de alimentos comunitarios, ropa y productos de aseo para las familias.',
+			},
+		],
+	},
+	{
+		id: 'bienestar',
+		name: 'Bienestar',
+		kicker: 'Aprendizaje y juego',
+		picture: bienestar,
+		summary: 'Salidas pedagógicas y de recreación para integrar, aprender y sonreír juntos.',
+		details: [
+			{
+				title: 'Objetivo',
+				body: 'Brindar a niños y familias integración, aprendizaje, diversión y entretenimiento de forma didáctica, por medio de salidas pedagógicas y de recreación.',
+			},
+			{
+				title: 'Entidades aliadas',
+				body: 'Zoológico Santa Fe, Museo de Antioquia, Jardín Botánico, Comfama, Comfenalco, Parque Explora y Planetario.',
+			},
+		],
+	},
+	{
+		id: 'bonos',
+		name: 'Bonos sonrisas',
+		kicker: 'Regalo con propósito',
+		picture: bonos,
+		summary: 'Un detalle para alguien especial que, al mismo tiempo, llega a más familias.',
+		details: [
+			{
+				title: 'Detalles llenos de significado',
+				body: 'Con esta donación adquieres un detalle especial con doble intención: un obsequio para alguien querido y una sonrisa para familias, niños y adultos en situación de vulnerabilidad.',
+			},
+		],
+	},
+]
+---
+
+<section id="proyectos" class="bg-brand-sky">
+	<div class="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
+		<div class="mx-auto max-w-2xl text-center">
+			<p class="section-kicker">Nuestros proyectos</p>
+			<h2 class="font-display text-4xl font-medium text-brand-navy md:text-5xl">Tres formas de tejer una sonrisa</h2>
+			<p class="mt-4 text-lg text-brand-muted">
+				Cada programa está pensado para cubrir lo esencial y también lo que alegra el corazón.
+			</p>
+		</div>
+
+		<div class="mt-14 grid gap-6 md:grid-cols-3">
+			{
+				proyectos.map(({ name, picture, id, summary, kicker }) => (
+					<a
+						href={`#${id}`}
+						class="group overflow-hidden rounded-4xl bg-white shadow-card transition hover:-translate-y-1"
+					>
+						<div class="aspect-[4/3] overflow-hidden">
+							<Image
+								src={picture}
+								alt={name}
+								class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+							/>
+						</div>
+						<div class="p-6">
+							<p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-heart">{kicker}</p>
+							<h3 class="mt-2 font-display text-3xl text-brand-navy">{name}</h3>
+							<p class="mt-3 text-sm leading-relaxed text-brand-muted">{summary}</p>
+							<p class="mt-5 text-sm font-semibold text-brand-blue">Conocer más →</p>
+						</div>
+					</a>
+				))
+			}
+		</div>
+
+		<div class="mt-16 space-y-8">
+			{
+				proyectos.map(({ name, picture, details, id, summary }) => (
+					<article
+						id={id}
+						class="grid overflow-hidden rounded-4xl bg-white shadow-soft md:grid-cols-2"
+					>
+						<div class="min-h-[280px]">
+							<Image src={picture} alt={name} class="h-full w-full object-cover" />
+						</div>
+						<div class="flex flex-col justify-center p-8 md:p-12">
+							<h3 class="font-display text-4xl text-brand-navy">{name}</h3>
+							<p class="mt-3 text-brand-muted">{summary}</p>
+							<div class="mt-6 space-y-5">
+								{details.map(({ title, body }) => (
+									<div>
+										<p class="text-sm font-semibold text-brand-heart">{title}</p>
+										<p class="mt-1 leading-relaxed text-brand-navy/80">{body}</p>
+									</div>
+								))}
+							</div>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>

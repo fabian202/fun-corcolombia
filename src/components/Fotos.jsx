@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-// album is the folder inside ../assets/fotos
 import foto1 from '../assets/fotos/1-alfonso-lopez/1.jpeg'
 import foto2 from '../assets/fotos/1-alfonso-lopez/2.jpeg'
 import foto3 from '../assets/fotos/1-alfonso-lopez/3.jpeg'
@@ -76,48 +75,48 @@ import foto63 from '../assets/fotos/10-robledo-diamante/7.jpeg'
 
 const fotos = [
   {
-    album: 'ABRIL 27 2024- BARRIO ALFONSO LOPEZ',
-    total: 6,
+    album: 'Barrio Alfonso López',
+    date: '27 abril 2024',
     pics: [foto1, foto2, foto3, foto4, foto5, foto6],
   },
   {
-    album: 'ALIMENTOS COMUNITARIOS EN LA COMUNA 2',
-    total: 9,
+    album: 'Alimentos comunitarios en la Comuna 2',
+    date: 'Medellín',
     pics: [foto7, foto8, foto9, foto10, foto11, foto12, foto13, foto14, foto15],
   },
   {
-    album: 'JUNIO 4 2024 - INSTITUCION EDUCATIVA RAFAEL J MEJIA',
-    total: 4,
+    album: 'Institución Educativa Rafael J. Mejía',
+    date: '4 junio 2024',
     pics: [foto16, foto17, foto18, foto19],
   },
   {
-    album: 'JUNIO 2024-MACARENA META',
-    total: 4,
+    album: 'Macarena, Meta',
+    date: 'Junio 2024',
     pics: [foto20, foto21, foto22, foto23],
   },
   {
-    album: 'MARZO 2024-INSTITUCION EDUCATIVA RAFAEL J MEJIA',
-    total: 7,
+    album: 'Institución Educativa Rafael J. Mejía',
+    date: 'Marzo 2024',
     pics: [foto24, foto25, foto26, foto27, foto28, foto29, foto30],
   },
   {
-    album: 'NOVIEMBRE 2023-HOGAR SAN JOSE DE LA MONTANA',
-    total: 3,
+    album: 'Hogar San José de la Montaña',
+    date: 'Noviembre 2023',
     pics: [foto31, foto32, foto33],
   },
   {
-    album: 'OCTUBRE 5 2023-ROBLEDO LAS MARGARITAS',
-    total: 6,
+    album: 'Robledo Las Margaritas',
+    date: '5 octubre 2023',
     pics: [foto34, foto35, foto36, foto37, foto38, foto39],
   },
   {
-    album: 'OCTUBRE 27 2023 - NIQUITAO COMUNA 10',
-    total: 7,
+    album: 'Niquitao, Comuna 10',
+    date: '27 octubre 2023',
     pics: [foto40, foto41, foto42, foto43, foto44, foto45, foto46],
   },
   {
-    album: 'SEPTIEMBRE 9 Y 10 DEL 2023- BARRIO PARAISO',
-    total: 10,
+    album: 'Barrio Paraíso',
+    date: '9 y 10 septiembre 2023',
     pics: [
       foto47,
       foto48,
@@ -132,8 +131,8 @@ const fotos = [
     ],
   },
   {
-    album: 'SEPTIEMBRE 26 2023-COMUNA 7 ROBLEDO EL DIAMANTE',
-    total: 7,
+    album: 'Robledo El Diamante',
+    date: '26 septiembre 2023',
     pics: [foto57, foto58, foto59, foto60, foto61, foto62, foto63],
   },
 ]
@@ -150,67 +149,105 @@ export default function Fotos() {
   }
 
   return (
-    <>
-      <p className="text-center text-5xl text-[#2867A7] p-6 font-bold">
-        Galería de fotos
-      </p>
-      {/* Instagram embed example */}
-      <div className="flex justify-center my-8">
-        <div className="w-full md:w-4/5 px-2 md:px-0">
-          <iframe
-            src="https://www.instagram.com/CORTEJIENDOSUENOS/embed"
-            width="100%"
-            // Responsive height: 480px on mobile, 960px on md+
-            className="rounded-lg shadow-md w-full h-[480px] md:h-[960px] "
-            frameBorder="0"
-            scrolling="no"
-            allowtransparency="true"
-            title="Instagram Profile"
-          ></iframe>
-        </div>
+    <section id="galeria" className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="section-kicker">Galería</p>
+        <h2 className="font-display text-4xl font-medium text-brand-navy md:text-5xl">
+          Lo que tejemos en comunidad
+        </h2>
+        <p className="mt-4 text-lg text-brand-muted">
+          Entregas, aulas y abrazos en barrios de Medellín y en el Meta.
+        </p>
       </div>
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {fotos.map((album, index) => (
-          <div key={index} className="album-card text-center">
-            <h2 className="text-2xl font-bold mb-4">{album.album}</h2>
-            <img
-              src={album.pics[0].src}
-              alt={`Album ${album.album}`}
-              className="w-64 h-64 object-cover rounded-lg shadow-md cursor-pointer mx-auto"
-              onClick={() => openModal(album)}
-            />
-          </div>
+
+      <div className="mt-12 overflow-hidden rounded-4xl bg-white p-3 shadow-card md:p-4">
+        <iframe
+          src="https://www.instagram.com/CORTEJIENDOSUENOS/embed"
+          className="h-[480px] w-full rounded-3xl md:h-[720px]"
+          allow="encrypted-media"
+          title="Perfil de Instagram de Cortejiendo Sueños"
+        ></iframe>
+      </div>
+
+      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {fotos.map((album) => (
+          <button
+            key={`${album.album}-${album.date}`}
+            type="button"
+            className="group overflow-hidden rounded-4xl bg-white text-left shadow-soft transition hover:-translate-y-1"
+            onClick={() => openModal(album)}
+          >
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={album.pics[0].src}
+                alt={`Álbum ${album.album}`}
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent"></div>
+              <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-navy">
+                {album.pics.length} fotos
+              </span>
+            </div>
+            <div className="p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-heart">
+                {album.date}
+              </p>
+              <h3 className="mt-1 font-display text-2xl text-brand-navy">{album.album}</h3>
+            </div>
+          </button>
         ))}
-        {selectedAlbum && <Modal album={selectedAlbum} onClose={closeModal} />}
       </div>
-    </>
+
+      {selectedAlbum && <Modal album={selectedAlbum} onClose={closeModal} />}
+    </section>
   )
 }
 
 function Modal({ album, onClose }) {
+  useEffect(() => {
+    const onKey = (event) => {
+      if (event.key === 'Escape') onClose()
+    }
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [onClose])
+
   return (
     <div
-      className="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-brand-navy/80 p-4 backdrop-blur-sm"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="album-title"
     >
       <div
-        className="modal-content bg-white p-4 rounded-lg space-y-4 text-center max-h-full overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
+        className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-4xl bg-white p-5 shadow-card md:p-8"
+        onClick={(event) => event.stopPropagation()}
       >
         <button
+          type="button"
           onClick={onClose}
-          className="absolute top-2 right-2 bg-gray-800 text-white p-2 rounded-full"
+          className="absolute right-4 top-4 rounded-full bg-brand-navy px-4 py-2 text-sm font-semibold text-white"
         >
           Cerrar
         </button>
-        <h2 className="text-2xl font-bold mb-4">{album.album}</h2>
-        <div className="grid grid-cols-3 gap-4">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-heart">
+          {album.date}
+        </p>
+        <h2 id="album-title" className="mt-2 max-w-3xl font-display text-3xl text-brand-navy">
+          {album.album}
+        </h2>
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {album.pics.map((pic, index) => (
             <img
               key={index}
               src={pic.src}
-              alt={`Foto ${index + 1}`}
-              className="w-80 h-80 object-cover rounded-lg shadow-md mx-auto"
+              alt={`${album.album}, foto ${index + 1}`}
+              className="h-56 w-full rounded-2xl object-cover"
             />
           ))}
         </div>

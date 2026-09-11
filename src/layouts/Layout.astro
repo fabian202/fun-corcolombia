@@ -1,30 +1,86 @@
 ---
+import '../styles/global.css'
+import Nav from '../components/Nav.astro'
+import Logo from '../components/Logo.astro'
+
 interface Props {
-	title: string;
+	title: string
+	description?: string
 }
 
-const { title } = Astro.props;
-const currentYear = new Date().getFullYear();
+const {
+	title,
+	description = 'Fundación Cortejiendo Sueños: ayudamos a niños, jóvenes, personas mayores y familias desplazadas con educación, alimentos, ropa y bienestar.',
+} = Astro.props
+const currentYear = new Date().getFullYear()
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#163A5F" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,600&display=swap"
+			rel="stylesheet"
+		/>
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="weave min-h-screen antialiased">
+		<Nav />
 		<slot />
-		<footer class="bg-[#BEE0F7] text-[#2867A7] mt-4 text-center p-4">
-			<p>Fundación Cortejiendo Sueños</p>
-			<p>© {currentYear} todos los derechos reservados</p>
+		<footer class="mt-4 bg-brand-navy text-white">
+			<div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-6">
+				<div>
+					<Logo variant="light" />
+					<p class="mt-5 max-w-sm text-sm leading-relaxed text-white/75">
+						Entidad sin ánimo de lucro. Tejemos oportunidades para poblaciones vulnerables en Colombia y más allá.
+					</p>
+				</div>
+				<div>
+					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Explorar</p>
+					<ul class="mt-4 space-y-2 text-sm text-white/80">
+						<li><a class="hover:text-white" href="#quienes">Quiénes somos</a></li>
+						<li><a class="hover:text-white" href="#proyectos">Proyectos</a></li>
+						<li><a class="hover:text-white" href="#galeria">Galería</a></li>
+						<li><a class="hover:text-white" href="#contacto">Contacto</a></li>
+					</ul>
+				</div>
+				<div>
+					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Conversemos</p>
+					<ul class="mt-4 space-y-2 text-sm text-white/80">
+						<li>
+							<a class="hover:text-white" href="https://wa.me/573136504001" target="_blank" rel="noopener noreferrer">
+								WhatsApp +57 313 650 4001
+							</a>
+						</li>
+						<li>
+							<a class="hover:text-white" href="mailto:cortejiendosuenosinternacional@gmail.com">
+								cortejiendosuenosinternacional@gmail.com
+							</a>
+						</li>
+						<li>
+							<a
+								class="hover:text-white"
+								href="https://www.instagram.com/CORTEJIENDOSUENOS/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Instagram @cortejiendosuenos
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="border-t border-white/10 py-5 text-center text-xs text-white/55">
+				<p>Fundación Cortejiendo Sueños · © {currentYear} todos los derechos reservados</p>
+			</div>
 		</footer>
 	</body>
 </html>
-<style is:global>
-
-</style>
